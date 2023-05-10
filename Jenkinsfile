@@ -8,9 +8,7 @@ pipeline{
     
     stages{
         
-        when{
-            expression{params.action == 'create'}
-        }
+    when{expression{params.action == 'create'}}
         
         stage("Git Checkout"){
             
@@ -24,11 +22,10 @@ pipeline{
                 }
             }
         }
-        stage('Unit Test Maven'){
         
-        when{
-            expression{params.action == 'create'}
-        }   
+        stage('Unit Test Maven'){
+        when{expression{params.action == 'create'}}
+
             steps{
                 
                 script{
@@ -36,11 +33,10 @@ pipeline{
                 }
             }
         }
+        
         stage('Intigration Test Maven'){
+        when{expression{params.action == 'create'}}
 
-        when{
-            expression{params.action == 'create'}
-        }   
             steps{
                 
                 script{
