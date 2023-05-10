@@ -46,5 +46,16 @@ pipeline{
                 }
             }
         }
+        stage('static code analysis: sonarqube'){
+        
+        when{expression{params.action == 'create'}}
+
+            steps{
+                
+                script{
+                    statiCodeAnalysis()  
+                }
+            }
+        }
     }
 }
