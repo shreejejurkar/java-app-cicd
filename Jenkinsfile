@@ -1,3 +1,5 @@
+@Library('my-shared-library') _
+
 pipeline{
     agent any
     stages{
@@ -7,8 +9,10 @@ pipeline{
             steps{
                 
                 script{
-                 
-                  git branch: 'main', url: 'https://github.com/shreejejurkar/java-app-cicd.git'  
+                    gitCheckout(
+                        branch: "main",
+                        url: "https://github.com/shreejejurkar/java-app-cicd.git"
+                    )  
                 }
             }
         }
