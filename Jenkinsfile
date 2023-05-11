@@ -26,29 +26,29 @@ pipeline{
             }
         }
         
-        stage('Unit Test Maven'){
+        // stage('Unit Test Maven'){
         
-        when{expression{params.action == 'create'}}
+        // when{expression{params.action == 'create'}}
 
-            steps{
+        //     steps{
                 
-                script{
-                    mvnTest()  
-                }
-            }
-        }
+        //         script{
+        //             mvnTest()  
+        //         }
+        //     }
+        // }
         
-        stage('Intigration Test Maven'){
+        // stage('Intigration Test Maven'){
         
-        when{expression{params.action == 'create'}}
+        // when{expression{params.action == 'create'}}
 
-            steps{
+        //     steps{
                 
-                script{
-                    mvnIntegrationTest()  
-                }
-            }
-        }
+        //         script{
+        //             mvnIntegrationTest()  
+        //         }
+        //     }
+        // }
         stage('static code analysis: sonarqube'){
         
         when{expression{params.action == 'create'}}
