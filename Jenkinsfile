@@ -4,7 +4,7 @@ pipeline{
     agent any
     parameters{
         choice(name: 'action', choices:'create\ndestroy', description:'Choose create/destroy')
-        string(name:'ImageName', description:'name of the docker build',defaultValue:javaapp)
+        string(name:'ImageName', description:'name of the docker build',defaultValue:'javaapp')
         string(name:'ImageTag', description:'tag of the docker build',defaultValue:'v1')
         string(name:'DockerHubUser', description:'name of the application',defaultValue:'shreejejurkar')
     }
