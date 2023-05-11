@@ -95,7 +95,7 @@ pipeline{
                 }
             }
         }
-        stage('Docker Build: Docker'){
+        stage('Docker Image Scan: Docker'){
         
         when{expression{params.action == 'create'}}
 
